@@ -6,7 +6,9 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 //model
 use App\Models\Project;
-use Illuminate\Support\Testing\Fakes\Fake;
+use App\Models\Type;
+//helper
+
 
 class ProjectSeeder extends Seeder
 {
@@ -15,15 +17,18 @@ class ProjectSeeder extends Seeder
      */
     public function run(): void
     {
+   
         Project::truncate();
 
         for ($i=0; $i < 20; $i++) { 
+            $rendomType = Type::inRandomOrder()->first();
             Project::create([
                 'title'=> substr(fake()->sentence(3),0,100),
                 'preview'=> fake()->imageUrl(400, 300),
                 'collaborators'=>substr(fake()->sentence(3),0,255),
                 'description'=> fake()->paragraph(),
                 'technologies'=> fake()->sentence(),
+                'type_id'=> $rendomType->id,
             ]);
 
         }

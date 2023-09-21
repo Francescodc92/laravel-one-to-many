@@ -27,12 +27,12 @@
                 <td>{{ $type->title }}</td>
                 <td>{{ $type->description }}</td>
                 <td>
-                  <a href="{{ route('admin.projects.show',['project'=> $project->id]) }}" class="btn btn-primary mt-2">vedi</a>
-                  <a href="{{ route('admin.projects.edit', ['project'=>$project->id]) }}" class="btn btn-warning mt-2">
+                  <a href="{{ route('admin.projects.show',['project'=> $type->id]) }}" class="btn btn-primary mt-2">vedi</a>
+                  <a href="{{ route('admin.projects.edit', ['project'=>$type->id]) }}" class="btn btn-warning mt-2">
                     Modifica
                   </a>
                   <form 
-                    action="{{ route('admin.projects.destroy', ['project'=>  $project->id]) }}"
+                    action="{{ route('admin.projects.destroy', ['project'=>  $type->id]) }}"
                     method="POST"
                     class="d-inline-block mt-2"
                     onsubmit="return confirm('Sei sicuro di voler cancellare questo elemento?');"

@@ -17,6 +17,7 @@
                 <th scope="col">title</th>
                 <th scope="col">collaborators</th>
                 <th scope="col">technologies</th>
+                <th scope="col">type</th>
                 <th scope="col">actions</th>
               </tr>
             </thead>
@@ -28,6 +29,7 @@
                 <td>{{ $project->title }}</td>
                 <td>{{ $project->collaborators }}</td>
                 <td>{{ $project->technologies }}</td>
+                <td>{{ $project->type_id }}</td>
                 <td>
                   <a href="{{ route('admin.projects.show',['project'=> $project->id]) }}" class="btn btn-primary mt-2">vedi</a>
                   <a href="{{ route('admin.projects.edit', ['project'=>$project->id]) }}" class="btn btn-warning mt-2">
