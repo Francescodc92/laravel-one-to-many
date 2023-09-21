@@ -29,7 +29,7 @@
                 <td>{{ $project->title }}</td>
                 <td>{{ $project->collaborators }}</td>
                 <td>{{ $project->technologies }}</td>
-                <td>{{ $project->type_id }}</td>
+                <td>{{ $project->type->title }}</td>
                 <td>
                   <a href="{{ route('admin.projects.show',['project'=> $project->id]) }}" class="btn btn-primary mt-2">vedi</a>
                   <a href="{{ route('admin.projects.edit', ['project'=>$project->id]) }}" class="btn btn-warning mt-2">
