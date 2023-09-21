@@ -9,7 +9,7 @@
 
 <div class="row">
   <div class="col-12">
-    <form action="{{ route('admin.types.update', ['project' => $project->id]) }}" method="POST">
+    <form action="{{ route('admin.types.update', ['type' => $type->id]) }}" method="POST">
       @csrf
       @method('PUT')
 
@@ -27,7 +27,7 @@
           id="title" 
           name="title" 
           placeholder="Enter title..." 
-          value="{{ old('title', $project->title) }}"  
+          value="{{ old('title', $type->title) }}"  
           required
         >
         @error('title')
@@ -44,7 +44,7 @@
             *
           </span>
         </label>
-        <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="3">{{ old('description', $project->description) }}</textarea>
+        <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="3">{{ old('description', $type->description) }}</textarea>
         @error('description')
             <div class="alert alert-danger my-2">
                 {{ $message }}
