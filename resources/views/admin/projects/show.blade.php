@@ -1,8 +1,11 @@
 @extends('layouts.app')
 
-@section('page-title', 'all Project')
+@section('page-title', 'Single Project')
 
 @section('main-content')
+<div class="col-12 mb-4">
+  <h1>Single Project: {{ $project->title }}</h1>
+</div>
 <div class="card  mb-3">
   <div class="row g-0">
       <div class="col-md-4 ">

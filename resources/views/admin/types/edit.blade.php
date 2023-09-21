@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
-@section('page-title', 'all Project')
+@section('page-title', 'Edit Type')
 
 @section('main-content')
+<div class="col-12 mb-4">
+  <h1>Edit Type: {{ $type->title }}</h1>
+</div>
+
 <div class="row">
   <div class="col-12">
     <form action="{{ route('admin.projects.update', ['project' => $project->id]) }}" method="POST">

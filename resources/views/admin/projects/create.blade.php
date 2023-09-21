@@ -1,8 +1,11 @@
 @extends('layouts.app')
 
-@section('page-title', 'all Project')
+@section('page-title', 'New Project')
 
 @section('main-content')
+<div class="col-12 mb-4">
+  <h1>New project</h1>
+</div>
 <div class="row">
   <div class="col-12">
     <form action="{{ route('admin.projects.store') }}" method="POST">

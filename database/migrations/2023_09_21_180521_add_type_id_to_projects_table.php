@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->unsignedBigInteger('type_id')->nullable();         //nome assegnato al campo creato nella tabella dipendente (projects)
+            $table->unsignedBigInteger('type_id')->nullable()->after('description');         //nome assegnato al campo creato nella tabella dipendente (projects)
             
             $table->foreign('type_id') //nome nuovo campo inserito nella tabella pojects (identificativo della tabella indipendete )
                 ->references('id') // colonna della tabella a cui mi riferisco (tabella indipendente)
