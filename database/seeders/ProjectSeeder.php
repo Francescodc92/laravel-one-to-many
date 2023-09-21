@@ -20,7 +20,7 @@ class ProjectSeeder extends Seeder
         for ($i=0; $i < 20; $i++) { 
             Project::create([
                 'title'=> substr(fake()->sentence(3),0,100),
-                'preview'=> fake()->url(),
+                'preview'=> fake()->imageUrl(400, 300),
                 'collaborators'=>substr(fake()->sentence(3),0,255),
                 'description'=> fake()->paragraph(),
                 'technologies'=> fake()->sentence(),
