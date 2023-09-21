@@ -29,6 +29,7 @@ class UpdateProjectRequest extends FormRequest
             'collaborators'=>'nullable|max:255',
             'description'=>'required',
             'technologies'=>'required',
+            'type_id'=>'nullable|exists:types,id',
         ];
     }
 
@@ -41,6 +42,7 @@ class UpdateProjectRequest extends FormRequest
             'collaborators.max'=> 'il contenuto dei collaboratori non può essere un testo più lungo di 255 caratteri spazi inclusi ',
             'description.required'=> 'la descrizione è obligatoria',
             'technologies.required'=> 'la lista delle tecnologie utilizzate è obbligatoria',
+            'type_id.exists'=> 'la categoria non esiste',
         ];
     }
 }

@@ -1,8 +1,11 @@
 @extends('layouts.app')
 
-@section('page-title', 'all Project')
+@section('page-title', 'Edit Project'.$project->id)
 
 @section('main-content')
+<div class="col-12 mb-4">
+  <h1>Edit Project: {{ $project->title }}</h1>
+</div>
 <div class="row">
   <div class="col-12">
     <form action="{{ route('admin.projects.update', ['project' => $project->id]) }}" method="POST">
@@ -95,6 +98,19 @@
           @enderror
         </div>
       </div>
+
+      <select class="form-select" id="type_id" name="type_id">
+        <option value="">Seleziona un tipo</option>
+        @foreach ($types as $type)
+          <option 
+            value="{{ $type->id }}"
+            {{ old('type_id', $project->type_id) ==  $type->id ? 'selected':'' }} 
+          >
+            {{ $type->title }}
+          </option>
+        @endforeach
+      </select>
+
 
       <div class="mb-3">
         <label for="description" class="form-label">

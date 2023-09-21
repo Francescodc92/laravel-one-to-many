@@ -1,10 +1,13 @@
 @extends('layouts.app')
 
-@section('page-title', 'all Project')
+@section('page-title', 'all Types')
 
 @section('main-content')
     <div class="col-12 mb-4">
-      <a href="{{ route('admin.projects.create') }}" class="btn btn-success w-100">
+      <h1>all Types</h1>
+    </div>
+    <div class="col-12 mb-4">
+      <a href="{{ route('admin.types.create') }}" class="btn btn-success w-100">
           + Aggiungi
       </a>
     </div>

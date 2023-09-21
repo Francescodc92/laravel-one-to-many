@@ -1,8 +1,11 @@
 @extends('layouts.app')
 
-@section('page-title', 'all Project')
+@section('page-title', 'all Projects')
 
 @section('main-content')
+  <div class="col-12 mb-4">
+    <h1>all Projects</h1>
+  </div>
     <div class="col-12 mb-4">
       <a href="{{ route('admin.projects.create') }}" class="btn btn-success w-100">
           + Aggiungi
@@ -29,7 +32,14 @@
                 <td>{{ $project->title }}</td>
                 <td>{{ $project->collaborators }}</td>
                 <td>{{ $project->technologies }}</td>
-                <td>{{ $project->type->title }}</td>
+                <td>
+                  @if ($project->type)
+                   <a href="{{ route('admin.types.show',['type'=> $project->type->id]) }}">{{ $project->type->title }}</a>
+                      
+                  @else
+                    -   
+                  @endif
+                </td>
                 <td>
                   <a href="{{ route('admin.projects.show',['project'=> $project->id]) }}" class="btn btn-primary mt-2">vedi</a>
                   <a href="{{ route('admin.projects.edit', ['project'=>$project->id]) }}" class="btn btn-warning mt-2">
