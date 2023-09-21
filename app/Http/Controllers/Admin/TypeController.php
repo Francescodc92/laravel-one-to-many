@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreTypeRequest;
-use App\Http\Requests\UpdateTypeRequest;
+use App\Http\Requests\Type\StoreTypeRequest;
+use App\Http\Requests\Type\UpdateTypeRequest;
 //controller
 use App\Http\Controllers\Controller;
 //models
@@ -25,7 +25,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.types.create');
     }
 
     /**
@@ -33,7 +33,11 @@ class TypeController extends Controller
      */
     public function store(StoreTypeRequest $request)
     {
-        //
+        $formData = $request->validated();
+        $type = Type::create($formData);
+
+
+        return redirect()->route('admin.types.show', ['type' => $type->id]);
     }
 
     /**

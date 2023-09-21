@@ -99,6 +99,19 @@
         </div>
       </div>
 
+      <select class="form-select" id="type_id" name="type_id">
+        <option value="">Seleziona un tipo</option>
+        @foreach ($types as $type)
+          <option 
+            value="{{ $type->id }}"
+            {{ old('type_id', $project->type_id) ==  $type->id ? 'selected':'' }} 
+          >
+            {{ $type->title }}
+          </option>
+        @endforeach
+      </select>
+
+
       <div class="mb-3">
         <label for="description" class="form-label">
           Description

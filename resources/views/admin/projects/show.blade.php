@@ -29,6 +29,17 @@
               </p>
               <p>
                   <span class="fw-bold">
+                    type:
+                  </span> 
+                  
+                  @if ($project->type)  
+                   {{ $project->type->title }}
+                  @else
+                   -
+                  @endif
+              </p>
+              <p>
+                  <span class="fw-bold">
                     descrizione:
                   </span> 
                   {{ $project->description }}

@@ -7,7 +7,7 @@
       <h1>all Types</h1>
     </div>
     <div class="col-12 mb-4">
-      <a href="{{ route('admin.projects.create') }}" class="btn btn-success w-100">
+      <a href="{{ route('admin.types.create') }}" class="btn btn-success w-100">
           + Aggiungi
       </a>
     </div>

@@ -33,7 +33,12 @@
                 <td>{{ $project->collaborators }}</td>
                 <td>{{ $project->technologies }}</td>
                 <td>
-                  <a href="{{ route('admin.types.show',['type'=> $project->type->id]) }}">{{ $project->type->title }}</a>
+                  @if ($project->type)
+                   <a href="{{ route('admin.types.show',['type'=> $project->type->id]) }}">{{ $project->type->title }}</a>
+                      
+                  @else
+                    -   
+                  @endif
                 </td>
                 <td>
                   <a href="{{ route('admin.projects.show',['project'=> $project->id]) }}" class="btn btn-primary mt-2">vedi</a>

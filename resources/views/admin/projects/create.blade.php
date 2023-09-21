@@ -52,6 +52,7 @@
             </div>
         @enderror
       </div>
+
       <div class="row">
         <div class="mb-3 col-12 col-md-6">
             <label for="collaborators" class="form-label">
@@ -96,6 +97,23 @@
           @enderror
         </div>
       </div>
+
+     <div class="mb-3">
+      <label for="type_id" class="form-label">
+        Types
+      </label>
+      <select class="form-select" id="type_id" name="type_id">
+        <option value="">Seleziona un tipo</option>
+        @foreach ($types as $type)
+          <option 
+            value="{{ $type->id }}"
+            {{ old('type_id') ==  $type->id ? 'selected':'' }} 
+          >
+            {{ $type->title }}
+          </option>
+        @endforeach
+      </select>
+     </div>
 
       <div class="mb-3">
         <label for="description" class="form-label">
