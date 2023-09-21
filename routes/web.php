@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 //controllers
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ Route::middleware(['auth', 'verified'])
     ->group(function(){
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::resource('projects', ProjectController::class);
+    Route::resource('types', TypeController::class);
 });
 
 
